@@ -1,0 +1,24 @@
+{
+  "name": "atsep_database",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Monsif96/ATSEP_DataBase.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Monsif96/ATSEP_DataBase/issues"
+  },
+  "homepage": "https://github.com/Monsif96/ATSEP_DataBase#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12",
+    "pg": "^8.7.1"
+  }
+}

@@ -18,7 +18,9 @@
   "homepage": "https://github.com/Monsif96/ATSEP_DataBase#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "knex": "^0.95.11",
     "nodemon": "^2.0.12",
-    "pg": "^8.7.1"
+    "pg": "^8.7.1",
+    "postgresql": "0.0.1"
   }
 }

@@ -6,6 +6,7 @@ const cors = require('cors');
 const knex = require('knex');
 
 const profile = require('./controllers/profile');
+const add = require('./controllers/add');
 
 
 //Connect to DataBase--------------------------------------------------------------------------------------------------------------
@@ -20,31 +21,22 @@ const Db = knex({
   }
 });
 
-Db.select('*').from('data').where({ id: 1 }).then(data => {
-	//console.log(data);
-});
-
-
 const app = express();
-app.use(bodyParser.json());
+app.use(bodyParser.json()); 
 app.use(cors());
+
 //----Home--------------------------------------------------------------------------------------------------------------
 app.get('/', (req, res) => {res.json('its Working !!!!');})
 
 //----Profile--------------------------------------------------------------------------------------------------------------
-app.get('/profile/:id', (req, res) => { 
-	console.log(req.params);
-	profile.handleprofile(req, res, Db);
-	//console.log(res);
+app.get('/registre', (req, res) => { profile.handleprofile(req, res, Db); });
 
-
-} );
-
-
+//----Register--------------------------------------------------------------------------------------------------------------
+app.post('/add', (req, res) => { add.handleadd(req, res, Db) });
 
 //Launch server--------------------------------------------------------------------------------------------------------------
 const port = process.env.PORT;
-app.listen(port || 3001, () => {
+app.listen(port || 3002, () => {
     console.log(`app is running on port ${process.env.PORT}`);
 })
 

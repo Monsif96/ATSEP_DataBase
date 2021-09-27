@@ -1,11 +1,10 @@
 const handleprofile = (req, res, Db) => {
-    const id  = req.params;
-    
-    Db.select('*').from('data').where({ name: id })
-        .then(console.log("user :"))
+
+    const id  = req.params.id;
+    Db.select('*').from('registre')
         .then(user => {
-            if (condition) {
-                res.json(user[0]);   
+            if (user.length) {
+                res.json(user);   
             } else {
                 res.status(400).json('Not Found');
             }
@@ -14,6 +13,6 @@ const handleprofile = (req, res, Db) => {
 }
 
 
-module.exports = {
+module.exports = { 
     handleprofile: handleprofile
 }

@@ -5,7 +5,7 @@ const handleadd = (req, res, Db) => {
     const date = req.body.date;
     const panne = req.body.panne;
     
-    console.log(req.body);
+    console.log(Ent, Equi, date, panne);
 
     if (!Ent || !Equi || !date || !panne) {
         return res.status(400).json('incorrect form submission');
